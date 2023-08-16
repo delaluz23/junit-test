@@ -23,24 +23,18 @@ public class Student {
         }
         return sum/ grades.size();
     }
-    public ArrayList<Integer> updatedGrade(int searchedGrade){
-        for(int grade:  grades){
-            if (searchedGrade == grade){
-                Scanner sc = new Scanner(System.in);
-                System.out.println("You searched for " + searchedGrade + " enter the grade you want to replace it with");
-                int result =  sc.nextInt();
-                grades.remove(grade);
-                grades.add(result);
+    public ArrayList<Integer> updatedGrade(int searchedGrade, int replacedgrade) {
+        for (int i = 0; i < grades.size(); i++) {
+            if (searchedGrade == grades.get(i)) {
+                grades.set(i, replacedgrade);
             }
         }
         return grades;
     }
     public ArrayList<Integer> deleteGrade(int searchedGrade){
-        for(int grade:  grades){
-            if (searchedGrade == grade){
-                Scanner sc = new Scanner(System.in);
-                System.out.println("You searched for " + searchedGrade + " and it will be deleted");
-                grades.remove(grade);
+        for(int i = 0; i < grades.size(); i++){
+            if (searchedGrade == grades.get(i)){
+                grades.remove(i);
             }
         }
         return grades;
