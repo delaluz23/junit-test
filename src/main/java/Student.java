@@ -1,6 +1,7 @@
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -15,7 +16,7 @@ public class Student {
         this.name = name;
         this.grades = grades;
     }
-    public double getGradeAverage(ArrayList<Integer> grades){
+    public double getGradeAverage(){
         double sum =0;
         for(int grade: grades){
             sum += grade;
@@ -42,6 +43,10 @@ public class Student {
                 grades.remove(grade);
             }
         }
+        return grades;
+    }
+    public AbstractList<Integer> addGrade(int x){
+        grades.add(x);
         return grades;
     }
 }
